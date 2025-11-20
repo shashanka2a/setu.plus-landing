@@ -205,7 +205,7 @@ export const Ecosystem: React.FC = () => {
 
           <SpotlightCard 
             name="DocPe" 
-            desc="Doctor appointment marketplace with verified healthcare providers." 
+            desc="Doctor appointment marketplace." 
             icon={Stethoscope} 
             color="red" 
             appId="docpe"
@@ -214,7 +214,7 @@ export const Ecosystem: React.FC = () => {
 
           <SpotlightCard 
             name="TicketPe" 
-            desc="Entertainment booking platform - your BMS alternative." 
+            desc="Entertainment booking - BMS alternative." 
             icon={Ticket} 
             color="teal" 
             appId="ticketpe"
