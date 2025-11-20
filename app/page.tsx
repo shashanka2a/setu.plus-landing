@@ -15,9 +15,9 @@ export default function Home() {
       
       <main className="relative z-10">
         <Hero />
-        <Mission />
-        <Features />
         <Ecosystem />
+        <Features />
+        <Mission />
       </main>
       
       <Footer />

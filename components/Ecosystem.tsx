@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from 'react';
-import { ShoppingBag, Truck, Wrench, Camera, Car, BookOpen, Stethoscope, ArrowRight } from 'lucide-react';
+import { ShoppingBag, Truck, Wrench, Camera, Car, ArrowRight } from 'lucide-react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 
 const colorMap: Record<string, { light: string; dark: string }> = {
@@ -100,7 +100,7 @@ export const Ecosystem: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-slate-600 dark:text-slate-400 text-xl font-light leading-relaxed max-w-2xl"
           >
-            Replacing fragmented experiences with a unified ecosystem. From daily groceries to healthcare, Setu.plus covers every aspect of modern life.
+            Replacing fragmented experiences with a unified ecosystem. From daily groceries to home services, Setu.plus covers every aspect of modern life.
           </motion.p>
         </div>
 
@@ -110,7 +110,7 @@ export const Ecosystem: React.FC = () => {
           {/* Featured Large Card */}
           <SpotlightCard 
             name="ShopPe" 
-            desc="The ultimate marketplace connecting buyers to sellers with AI-powered recommendations and instant logistics." 
+            desc="Used goods marketplace connecting buyers to sellers with AI-powered recommendations and instant logistics." 
             icon={ShoppingBag} 
             color="purple" 
             className="md:col-span-2 lg:col-span-2 bg-gradient-to-br from-white to-purple-50/50 dark:from-white/5 dark:to-purple-900/10"
@@ -156,22 +156,6 @@ export const Ecosystem: React.FC = () => {
             color="yellow" 
             className="md:col-span-2 lg:col-span-2 bg-gradient-to-br from-white to-yellow-50/50 dark:from-white/5 dark:to-yellow-900/10"
             delay={0.6}
-          />
-
-          <SpotlightCard 
-            name="DocPe" 
-            desc="Instant medical consultations." 
-            icon={Stethoscope} 
-            color="red" 
-            delay={0.7}
-          />
-
-           <SpotlightCard 
-            name="LearnPe" 
-            desc="Skill development ecosystem." 
-            icon={BookOpen} 
-            color="teal" 
-            delay={0.8}
           />
         </div>
       </div>

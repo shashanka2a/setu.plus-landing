@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section ref={targetRef} className="relative min-h-screen flex items-center pt-20 pb-10 overflow-hidden bg-slate-50 dark:bg-[#020617] perspective-1000">
+    <section ref={targetRef} className="relative min-h-screen flex items-center pt-32 pb-10 overflow-hidden bg-slate-50 dark:bg-[#020617] perspective-1000">
       
       {/* Dynamic Background Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
