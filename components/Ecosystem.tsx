@@ -19,6 +19,7 @@ const colorMap: Record<string, { light: string; dark: string }> = {
 const SpotlightCard = ({ name, desc, icon: Icon, color, className, delay, appId }: any) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
     const { left, top } = currentTarget.getBoundingClientRect();
@@ -26,51 +27,88 @@ const SpotlightCard = ({ name, desc, icon: Icon, color, className, delay, appId 
     mouseY.set(clientY - top);
   }
 
+  const handleClick = (e: React.MouseEvent) => {
+    setIsLoading(true);
+    // Navigation will happen via Link, but we show loading state
+  };
+
   const colorClasses = colorMap[color] || colorMap.blue;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className={`group relative border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 overflow-hidden rounded-3xl ${className || ''}`}
-      onMouseMove={handleMouseMove}
-    >
-      {/* Spotlight Overlay */}
+    <Link href={`/${appId}`} onClick={handleClick}>
       <motion.div
-        className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100 z-10"
-        style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              650px circle at ${mouseX}px ${mouseY}px,
-              rgba(14, 165, 233, 0.15),
-              transparent 80%
-            )
-          `,
-        }}
-      />
-      <div className="relative h-full p-8 flex flex-col justify-between z-20">
-        <div>
-          <div className={`w-14 h-14 rounded-2xl 
-            bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 
-            flex items-center justify-center mb-6
-            ${colorClasses.light} ${colorClasses.dark}
-            group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-sm`}>
-            <Icon size={28} strokeWidth={1.5} />
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay }}
+        className={`group relative border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 overflow-hidden rounded-3xl cursor-pointer ${className || ''}`}
+        onMouseMove={handleMouseMove}
+      >
+        {/* Loading Overlay */}
+        {isLoading && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="absolute inset-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm z-30 flex items-center justify-center"
+          >
+            <div className="flex flex-col items-center gap-3">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                className="w-8 h-8 rounded-full"
+                style={{
+                  border: `3px solid ${color === 'purple' ? '#9333EA' : color === 'orange' ? '#EA580C' : color === 'green' ? '#16A34A' : color === 'blue' ? '#2563EB' : color === 'pink' ? '#DB2777' : '#CA8A04'}`,
+                  borderTopColor: 'transparent',
+                }}
+              />
+              <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Loading...</span>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Shimmer Loading Effect */}
+        <motion.div
+          className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-0"
+          style={{
+            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)',
+          }}
+        />
+
+        {/* Spotlight Overlay */}
+        <motion.div
+          className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100 z-10"
+          style={{
+            background: useMotionTemplate`
+              radial-gradient(
+                650px circle at ${mouseX}px ${mouseY}px,
+                rgba(14, 165, 233, 0.15),
+                transparent 80%
+              )
+            `,
+          }}
+        />
+        <div className="relative h-full p-8 flex flex-col justify-between z-20">
+          <div>
+            <motion.div 
+              className={`w-14 h-14 rounded-2xl 
+                bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 
+                flex items-center justify-center mb-6
+                ${colorClasses.light} ${colorClasses.dark}
+                group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-sm`}
+              whileHover={{ scale: 1.1, rotate: 3 }}
+            >
+              <Icon size={28} strokeWidth={1.5} />
+            </motion.div>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{name}</h3>
+            <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-light">{desc}</p>
           </div>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{name}</h3>
-          <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-light">{desc}</p>
+          
+          <div className="mt-8 flex items-center text-sm font-bold text-slate-900 dark:text-white opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+            Explore App <ArrowRight size={16} className="ml-2" />
+          </div>
         </div>
-        
-        <Link
-          href={`/${appId}`}
-          className="mt-8 flex items-center text-sm font-bold text-slate-900 dark:text-white opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
-        >
-          Explore App <ArrowRight size={16} className="ml-2" />
-        </Link>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 };
 
