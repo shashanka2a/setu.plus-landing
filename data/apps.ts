@@ -1,6 +1,6 @@
-import { ShoppingBag, Truck, Wrench, Camera, Car } from 'lucide-react';
+import { ShoppingBag, Truck, Wrench, Camera, Car, Stethoscope, Ticket } from 'lucide-react';
 
-export type IconName = 'ShoppingBag' | 'Truck' | 'Wrench' | 'Camera' | 'Car';
+export type IconName = 'ShoppingBag' | 'Truck' | 'Wrench' | 'Camera' | 'Car' | 'Stethoscope' | 'Ticket';
 
 export interface AppConfig {
   id: string;
@@ -304,6 +304,98 @@ export const appsConfig: Record<string, AppConfig> = {
       { label: 'Active Riders', value: '200K+' },
       { label: 'Rides Shared', value: '1M+' },
       { label: 'Cities', value: '50+' },
+    ],
+  },
+  docpe: {
+    id: 'docpe',
+    name: 'DocPe',
+    tagline: 'Doctor Appointment Marketplace',
+    description: 'Book appointments with verified doctors instantly. Connect with healthcare providers in your area for consultations, check-ups, and medical services.',
+    icon: 'Stethoscope',
+    color: {
+      primary: 'red',
+      secondary: 'red-600',
+      gradient: 'from-red-600 via-red-500 to-red-600',
+    },
+    features: [
+      {
+        title: 'Verified Doctors',
+        description: 'All healthcare providers are verified and licensed for your safety and peace of mind.',
+      },
+      {
+        title: 'Instant Booking',
+        description: 'Book appointments in real-time with instant confirmation and reminders.',
+      },
+      {
+        title: 'Multiple Specialties',
+        description: 'Access doctors across all specialties from general medicine to specialized care.',
+      },
+      {
+        title: 'Telemedicine Support',
+        description: 'Video consultations available for remote healthcare access.',
+      },
+    ],
+    benefits: [
+      'Verified healthcare providers',
+      'Instant appointment booking',
+      'Multiple specialties available',
+      'Telemedicine consultations',
+      'Health records management',
+    ],
+    cta: {
+      primary: 'Book Appointment',
+      secondary: 'Find Doctor',
+    },
+    stats: [
+      { label: 'Doctors', value: '10K+' },
+      { label: 'Appointments', value: '500K+' },
+      { label: 'Cities', value: '100+' },
+    ],
+  },
+  ticketpe: {
+    id: 'ticketpe',
+    name: 'TicketPe',
+    tagline: 'Entertainment Booking Platform',
+    description: 'Book movie tickets, event passes, and entertainment experiences. Your alternative to BMS with better deals and seamless booking.',
+    icon: 'Ticket',
+    color: {
+      primary: 'teal',
+      secondary: 'teal-600',
+      gradient: 'from-teal-600 via-teal-500 to-teal-600',
+    },
+    features: [
+      {
+        title: 'Movie Tickets',
+        description: 'Book cinema tickets with seat selection and instant confirmation.',
+      },
+      {
+        title: 'Event Passes',
+        description: 'Access concerts, sports events, and live shows with exclusive deals.',
+      },
+      {
+        title: 'Best Prices',
+        description: 'Competitive pricing with special offers and discounts for members.',
+      },
+      {
+        title: 'Easy Refunds',
+        description: 'Hassle-free cancellation and refund policies for your convenience.',
+      },
+    ],
+    benefits: [
+      'Movie ticket booking',
+      'Event passes available',
+      'Best prices guaranteed',
+      'Easy refunds',
+      'Mobile-first experience',
+    ],
+    cta: {
+      primary: 'Book Tickets',
+      secondary: 'Browse Events',
+    },
+    stats: [
+      { label: 'Theaters', value: '5K+' },
+      { label: 'Events', value: '10K+' },
+      { label: 'Cities', value: '200+' },
     ],
   },
 };

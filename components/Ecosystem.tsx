@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 import Link from 'next/link';
-import { ShoppingBag, Truck, Wrench, Camera, Car, ArrowRight } from 'lucide-react';
+import { ShoppingBag, Truck, Wrench, Camera, Car, Stethoscope, Ticket, ArrowRight } from 'lucide-react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 
 const colorMap: Record<string, { light: string; dark: string }> = {
@@ -151,7 +151,7 @@ export const Ecosystem: React.FC = () => {
           
           <SpotlightCard 
             name="ShopPe" 
-            desc="Used goods marketplace connecting buyers to sellers with AI-powered recommendations and instant logistics." 
+            desc="Used goods marketplace with AI-powered recommendations." 
             icon={ShoppingBag} 
             color="purple" 
             appId="shoppe"
@@ -196,11 +196,29 @@ export const Ecosystem: React.FC = () => {
 
           <SpotlightCard 
             name="RidePe" 
-            desc="Community-driven carpooling and mobility solutions for the modern commuter." 
+            desc="Community-driven carpooling for modern commuters." 
             icon={Car} 
             color="yellow" 
             appId="ridepe"
             delay={0.6}
+          />
+
+          <SpotlightCard 
+            name="DocPe" 
+            desc="Doctor appointment marketplace with verified healthcare providers." 
+            icon={Stethoscope} 
+            color="red" 
+            appId="docpe"
+            delay={0.7}
+          />
+
+          <SpotlightCard 
+            name="TicketPe" 
+            desc="Entertainment booking platform - your BMS alternative." 
+            icon={Ticket} 
+            color="teal" 
+            appId="ticketpe"
+            delay={0.8}
           />
         </div>
       </div>

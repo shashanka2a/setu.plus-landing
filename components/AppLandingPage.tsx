@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, Check, ShoppingBag, Truck, Wrench, Camera, Car } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, ShoppingBag, Truck, Wrench, Camera, Car, Stethoscope, Ticket } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AppConfig, IconName } from '@/data/apps';
 import { Navbar } from './Navbar';
@@ -14,6 +14,8 @@ const iconMap: Record<IconName, React.ComponentType<any>> = {
   Wrench,
   Camera,
   Car,
+  Stethoscope,
+  Ticket,
 };
 
 interface AppLandingPageProps {
@@ -68,6 +70,20 @@ const colorMap: Record<string, {
     border: 'border-yellow-200 dark:border-yellow-500/30',
     solid: '#CA8A04',
     hover: 'hover:bg-yellow-600',
+  },
+  red: {
+    bg: 'bg-red-50 dark:bg-red-900/10',
+    text: 'text-red-600 dark:text-red-400',
+    border: 'border-red-200 dark:border-red-500/30',
+    solid: '#DC2626',
+    hover: 'hover:bg-red-600',
+  },
+  teal: {
+    bg: 'bg-teal-50 dark:bg-teal-900/10',
+    text: 'text-teal-600 dark:text-teal-400',
+    border: 'border-teal-200 dark:border-teal-500/30',
+    solid: '#0D9488',
+    hover: 'hover:bg-teal-600',
   },
 };
 
