@@ -21,7 +21,9 @@ export const metadata: Metadata = {
   keywords: ["ONDC", "Digital India", "Merchant OS", "Payments", "Lending", "E-commerce"],
   authors: [{ name: "Setu.plus" }],
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
     apple: "/icon.svg",
   },
   openGraph: {

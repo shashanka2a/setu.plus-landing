@@ -24,49 +24,49 @@ const colorMap: Record<string, {
   bg: string; 
   text: string; 
   border: string;
-  gradient: string;
+  solid: string;
   hover: string;
 }> = {
   purple: {
     bg: 'bg-purple-50 dark:bg-purple-900/10',
     text: 'text-purple-600 dark:text-purple-400',
     border: 'border-purple-200 dark:border-purple-500/30',
-    gradient: 'from-purple-600 to-purple-500',
+    solid: '#9333EA',
     hover: 'hover:bg-purple-600',
   },
   orange: {
     bg: 'bg-orange-50 dark:bg-orange-900/10',
     text: 'text-orange-600 dark:text-orange-400',
     border: 'border-orange-200 dark:border-orange-500/30',
-    gradient: 'from-orange-600 to-orange-500',
+    solid: '#EA580C',
     hover: 'hover:bg-orange-600',
   },
   green: {
     bg: 'bg-green-50 dark:bg-green-900/10',
     text: 'text-green-600 dark:text-green-400',
     border: 'border-green-200 dark:border-green-500/30',
-    gradient: 'from-green-600 to-green-500',
+    solid: '#16A34A',
     hover: 'hover:bg-green-600',
   },
   blue: {
     bg: 'bg-blue-50 dark:bg-blue-900/10',
     text: 'text-blue-600 dark:text-blue-400',
     border: 'border-blue-200 dark:border-blue-500/30',
-    gradient: 'from-blue-600 to-blue-500',
+    solid: '#2563EB',
     hover: 'hover:bg-blue-600',
   },
   pink: {
     bg: 'bg-pink-50 dark:bg-pink-900/10',
     text: 'text-pink-600 dark:text-pink-400',
     border: 'border-pink-200 dark:border-pink-500/30',
-    gradient: 'from-pink-600 to-pink-500',
+    solid: '#DB2777',
     hover: 'hover:bg-pink-600',
   },
   yellow: {
     bg: 'bg-yellow-50 dark:bg-yellow-900/10',
     text: 'text-yellow-600 dark:text-yellow-400',
     border: 'border-yellow-200 dark:border-yellow-500/30',
-    gradient: 'from-yellow-600 to-yellow-500',
+    solid: '#CA8A04',
     hover: 'hover:bg-yellow-600',
   },
 };
@@ -85,12 +85,6 @@ export const AppLandingPage: React.FC<AppLandingPageProps> = ({ app }) => {
       <main className="relative z-10">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
-          {/* Background Gradient */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className={`absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br ${app.color.gradient} opacity-10 dark:opacity-20 rounded-full blur-[100px]`}></div>
-            <div className={`absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr ${app.color.gradient} opacity-10 dark:opacity-20 rounded-full blur-[100px]`}></div>
-          </div>
-
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               {/* Back Link */}
@@ -108,14 +102,14 @@ export const AppLandingPage: React.FC<AppLandingPageProps> = ({ app }) => {
                 </Link>
               </motion.div>
 
-              {/* App Icon & Tagline */}
+              {/* App Icon & Tagline - Centered */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 }}
-                className="mb-8"
+                className="mb-8 flex flex-col items-center"
               >
-                <div className={`inline-flex items-center justify-center w-20 h-20 rounded-3xl ${colors.bg} ${colors.border} border-2 mb-6`}>
+                <div className={`inline-flex items-center justify-center w-20 h-20 rounded-3xl ${colors.bg} ${colors.border} border-2 mb-4`}>
                   <Icon size={40} className={colors.text} />
                 </div>
                 <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full ${colors.bg} ${colors.border} border text-xs font-bold uppercase tracking-wider ${colors.text}`}>
@@ -150,7 +144,7 @@ export const AppLandingPage: React.FC<AppLandingPageProps> = ({ app }) => {
                 transition={{ delay: 0.4 }}
                 className="flex flex-wrap justify-center gap-4"
               >
-                <button className={`group px-8 py-4 rounded-full bg-gradient-to-r ${app.color.gradient} text-white font-bold ${colors.hover} transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center gap-3`}>
+                <button className="group px-8 py-4 rounded-full text-white font-bold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center gap-3" style={{ backgroundColor: colors.solid }}>
                   {app.cta.primary}
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -254,7 +248,7 @@ export const AppLandingPage: React.FC<AppLandingPageProps> = ({ app }) => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-32 bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 text-white relative overflow-hidden">
+        <section className="py-32 bg-slate-900 dark:bg-slate-800 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px]"></div>
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
@@ -265,7 +259,7 @@ export const AppLandingPage: React.FC<AppLandingPageProps> = ({ app }) => {
                 Join the {app.name} community today and experience the future of digital commerce.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className={`group px-8 py-4 rounded-full bg-gradient-to-r ${app.color.gradient} text-white font-bold ${colors.hover} transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center gap-3`}>
+                <button className="group px-8 py-4 rounded-full text-white font-bold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center gap-3" style={{ backgroundColor: colors.solid }}>
                   {app.cta.primary}
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </button>
