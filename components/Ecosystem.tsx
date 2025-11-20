@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from 'react';
+import Link from 'next/link';
 import { ShoppingBag, Truck, Wrench, Camera, Car, ArrowRight } from 'lucide-react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 
@@ -15,7 +16,7 @@ const colorMap: Record<string, { light: string; dark: string }> = {
   teal: { light: 'text-teal-600', dark: 'dark:text-teal-400' },
 };
 
-const SpotlightCard = ({ name, desc, icon: Icon, color, className, delay }: any) => {
+const SpotlightCard = ({ name, desc, icon: Icon, color, className, delay, appId }: any) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -62,9 +63,12 @@ const SpotlightCard = ({ name, desc, icon: Icon, color, className, delay }: any)
           <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-light">{desc}</p>
         </div>
         
-        <div className="mt-8 flex items-center text-sm font-bold text-slate-900 dark:text-white opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+        <Link
+          href={`/${appId}`}
+          className="mt-8 flex items-center text-sm font-bold text-slate-900 dark:text-white opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+        >
           Explore App <ArrowRight size={16} className="ml-2" />
-        </div>
+        </Link>
       </div>
     </motion.div>
   );
@@ -113,6 +117,7 @@ export const Ecosystem: React.FC = () => {
             desc="Used goods marketplace connecting buyers to sellers with AI-powered recommendations and instant logistics." 
             icon={ShoppingBag} 
             color="purple" 
+            appId="shoppe"
             className="md:col-span-2 lg:col-span-2 bg-gradient-to-br from-white to-purple-50/50 dark:from-white/5 dark:to-purple-900/10"
             delay={0.1}
           />
@@ -122,6 +127,7 @@ export const Ecosystem: React.FC = () => {
             desc="Hyper-local food delivery supporting local restaurants." 
             icon={Truck} 
             color="orange" 
+            appId="foodpe"
             delay={0.2}
           />
           
@@ -130,6 +136,7 @@ export const Ecosystem: React.FC = () => {
             desc="Digitizing neighborhood grocery stores instantly." 
             icon={ShoppingBag} 
             color="green" 
+            appId="kiranape"
             delay={0.3}
           />
 
@@ -138,6 +145,7 @@ export const Ecosystem: React.FC = () => {
             desc="Trusted home services on demand." 
             icon={Wrench} 
             color="blue" 
+            appId="repairpe"
             delay={0.4}
           />
 
@@ -146,6 +154,7 @@ export const Ecosystem: React.FC = () => {
             desc="Professional photography marketplace." 
             icon={Camera} 
             color="pink" 
+            appId="snappe"
             delay={0.5}
           />
 
@@ -154,6 +163,7 @@ export const Ecosystem: React.FC = () => {
             desc="Community-driven carpooling and mobility solutions for the modern commuter." 
             icon={Car} 
             color="yellow" 
+            appId="ridepe"
             className="md:col-span-2 lg:col-span-2 bg-gradient-to-br from-white to-yellow-50/50 dark:from-white/5 dark:to-yellow-900/10"
             delay={0.6}
           />

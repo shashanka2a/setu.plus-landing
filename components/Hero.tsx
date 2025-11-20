@@ -226,23 +226,6 @@ export const Hero: React.FC = () => {
                   </div>
                </div>
 
-               {/* Floating Elements */}
-               <motion.div 
-                 animate={{ y: [0, -20, 0] }}
-                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                 className="absolute top-[20%] -right-[10%] translate-z-[80px]"
-               >
-                 <div className="bg-white/90 dark:bg-[#1A202C]/90 backdrop-blur-xl p-4 rounded-2xl shadow-2xl border border-white/20 dark:border-white/10 flex items-center gap-4">
-                   <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
-                     <Globe size={24} />
-                   </div>
-                   <div>
-                     <div className="text-xs font-bold text-slate-400 uppercase">Active Sellers</div>
-                     <div className="text-2xl font-bold text-slate-900 dark:text-white">2M+</div>
-                   </div>
-                 </div>
-               </motion.div>
-
             </motion.div>
           </motion.div>
         </div>
