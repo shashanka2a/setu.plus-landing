@@ -1,0 +1,48 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle (optional, for app icons) -->
+  <circle cx="90" cy="90" r="85" fill="url(#iconGradient)" opacity="0.1"/>
+  
+  <!-- Bridge Structure -->
+  <g transform="translate(90, 90)">
+    <path d="M-60 30 L-40 10 L-20 20 L0 0 L20 20 L40 10 L60 30" 
+          stroke="url(#iconGradient)" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          fill="none"/>
+    
+    <!-- Bridge Pillars -->
+    <line x1="-40" y1="10" x2="-40" y2="50" 
+          stroke="url(#iconGradient)" 
+          stroke-width="6" 
+          stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="0" y2="50" 
+          stroke="url(#iconGradient)" 
+          stroke-width="6" 
+          stroke-linecap="round"/>
+    <line x1="40" y1="10" x2="40" y2="50" 
+          stroke="url(#iconGradient)" 
+          stroke-width="6" 
+          stroke-linecap="round"/>
+    
+    <!-- Plus Symbol -->
+    <circle cx="0" cy="-30" r="18" 
+            fill="url(#iconGradient)"/>
+    <line x1="0" y1="-42" x2="0" y2="-18" 
+          stroke="white" 
+          stroke-width="4" 
+          stroke-linecap="round"/>
+    <line x1="-12" y1="-30" x2="12" y2="-30" 
+          stroke="white" 
+          stroke-width="4" 
+          stroke-linecap="round"/>
+  </g>
+</svg>
+

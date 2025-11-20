@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Menu, X, ArrowRight, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
@@ -45,14 +46,49 @@ export const Navbar: React.FC = () => {
         `}>
           
           {/* Logo */}
-          <div className="flex items-center gap-2.5 cursor-pointer group">
-            <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
-              <span className="font-bold text-white text-sm font-mono">S+</span>
+          <Link href="/" className="flex items-center gap-2.5 cursor-pointer group">
+            <div className="w-9 h-9 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                <defs>
+                  <linearGradient id="navGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{stopColor:"#4F46E5",stopOpacity:1}} />
+                    <stop offset="100%" style={{stopColor:"#06B6D4",stopOpacity:1}} />
+                  </linearGradient>
+                </defs>
+                <path d="M4 20 L8 16 L12 18 L16 14 L20 18 L24 16 L28 20" 
+                      stroke="url(#navGradient)" 
+                      strokeWidth="2.5" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      fill="none"/>
+                <line x1="8" y1="16" x2="8" y2="24" 
+                      stroke="url(#navGradient)" 
+                      strokeWidth="2" 
+                      strokeLinecap="round"/>
+                <line x1="16" y1="14" x2="16" y2="24" 
+                      stroke="url(#navGradient)" 
+                      strokeWidth="2" 
+                      strokeLinecap="round"/>
+                <line x1="24" y1="16" x2="24" y2="24" 
+                      stroke="url(#navGradient)" 
+                      strokeWidth="2" 
+                      strokeLinecap="round"/>
+                <circle cx="16" cy="10" r="4" 
+                        fill="url(#navGradient)"/>
+                <line x1="16" y1="8" x2="16" y2="12" 
+                      stroke="white" 
+                      strokeWidth="1.5" 
+                      strokeLinecap="round"/>
+                <line x1="14" y1="10" x2="18" y2="10" 
+                      stroke="white" 
+                      strokeWidth="1.5" 
+                      strokeLinecap="round"/>
+              </svg>
             </div>
             <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
               Setu.plus
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-1">

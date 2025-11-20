@@ -2,11 +2,19 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, ShoppingBag, Truck, Wrench, Camera, Car } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { AppConfig } from '@/data/apps';
+import { AppConfig, IconName } from '@/data/apps';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+
+const iconMap: Record<IconName, React.ComponentType<any>> = {
+  ShoppingBag,
+  Truck,
+  Wrench,
+  Camera,
+  Car,
+};
 
 interface AppLandingPageProps {
   app: AppConfig;
@@ -65,7 +73,7 @@ const colorMap: Record<string, {
 
 export const AppLandingPage: React.FC<AppLandingPageProps> = ({ app }) => {
   const colors = colorMap[app.color.primary] || colorMap.blue;
-  const Icon = app.icon;
+  const Icon = iconMap[app.icon] || ShoppingBag;
 
   return (
     <div className="bg-slate-50 dark:bg-[#020617] min-h-screen text-slate-900 dark:text-white font-sans transition-colors duration-500 relative overflow-x-hidden">

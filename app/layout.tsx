@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   description: "The Merchant Operating System. We bundle payments, lending, and ONDC seller tools into a powerful B2B2C flywheel.",
   keywords: ["ONDC", "Digital India", "Merchant OS", "Payments", "Lending", "E-commerce"],
   authors: [{ name: "Setu.plus" }],
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "Setu.plus | Powering Digital India",
     description: "The Merchant Operating System. We bundle payments, lending, and ONDC seller tools into a powerful B2B2C flywheel.",

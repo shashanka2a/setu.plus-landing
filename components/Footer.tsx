@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Twitter, Linkedin, Github, Mail } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -11,14 +12,49 @@ export const Footer: React.FC = () => {
           
           {/* Brand Column */}
           <div className="md:col-span-4">
-            <div className="flex items-center gap-2.5 mb-6">
-              <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
-                <span className="font-bold text-white text-sm font-mono">S+</span>
+            <Link href="/" className="flex items-center gap-2.5 mb-6 group">
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                  <defs>
+                    <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style={{stopColor:"#4F46E5",stopOpacity:1}} />
+                      <stop offset="100%" style={{stopColor:"#06B6D4",stopOpacity:1}} />
+                    </linearGradient>
+                  </defs>
+                  <path d="M4 20 L8 16 L12 18 L16 14 L20 18 L24 16 L28 20" 
+                        stroke="url(#footerGradient)" 
+                        strokeWidth="2.5" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        fill="none"/>
+                  <line x1="8" y1="16" x2="8" y2="24" 
+                        stroke="url(#footerGradient)" 
+                        strokeWidth="2" 
+                        strokeLinecap="round"/>
+                  <line x1="16" y1="14" x2="16" y2="24" 
+                        stroke="url(#footerGradient)" 
+                        strokeWidth="2" 
+                        strokeLinecap="round"/>
+                  <line x1="24" y1="16" x2="24" y2="24" 
+                        stroke="url(#footerGradient)" 
+                        strokeWidth="2" 
+                        strokeLinecap="round"/>
+                  <circle cx="16" cy="10" r="4" 
+                          fill="url(#footerGradient)"/>
+                  <line x1="16" y1="8" x2="16" y2="12" 
+                        stroke="white" 
+                        strokeWidth="1.5" 
+                        strokeLinecap="round"/>
+                  <line x1="14" y1="10" x2="18" y2="10" 
+                        stroke="white" 
+                        strokeWidth="1.5" 
+                        strokeLinecap="round"/>
+                </svg>
               </div>
               <span className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
                 Setu.plus
               </span>
-            </div>
+            </Link>
             <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
               The Operating System for Indian SMEs. Empowering millions of merchants to join the ONDC revolution with seamless payments, lending, and commerce tools.
             </p>

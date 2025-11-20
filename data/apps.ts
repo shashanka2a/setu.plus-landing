@@ -1,12 +1,13 @@
 import { ShoppingBag, Truck, Wrench, Camera, Car } from 'lucide-react';
-import { LucideIcon } from 'lucide-react';
+
+export type IconName = 'ShoppingBag' | 'Truck' | 'Wrench' | 'Camera' | 'Car';
 
 export interface AppConfig {
   id: string;
   name: string;
   tagline: string;
   description: string;
-  icon: LucideIcon;
+  icon: IconName;
   color: {
     primary: string;
     secondary: string;
@@ -34,7 +35,7 @@ export const appsConfig: Record<string, AppConfig> = {
     name: 'ShopPe',
     tagline: 'Used Goods Marketplace',
     description: 'The ultimate marketplace for buying and selling used goods. Connect with buyers and sellers in your community with AI-powered recommendations and instant logistics.',
-    icon: ShoppingBag,
+    icon: 'ShoppingBag',
     color: {
       primary: 'purple',
       secondary: 'purple-600',
@@ -80,7 +81,7 @@ export const appsConfig: Record<string, AppConfig> = {
     name: 'FoodPe',
     tagline: 'Hyper-Local Food Delivery',
     description: 'Supporting local restaurants with fast, reliable food delivery. Order from your favorite neighborhood eateries and get meals delivered to your doorstep.',
-    icon: Truck,
+    icon: 'Truck',
     color: {
       primary: 'orange',
       secondary: 'orange-600',
@@ -126,7 +127,7 @@ export const appsConfig: Record<string, AppConfig> = {
     name: 'KiranaPe',
     tagline: 'Digitize Your Neighborhood Store',
     description: 'Instantly digitize your neighborhood grocery store. Manage inventory, accept online orders, and serve customers both in-store and online.',
-    icon: ShoppingBag,
+    icon: 'ShoppingBag',
     color: {
       primary: 'green',
       secondary: 'green-600',
@@ -172,7 +173,7 @@ export const appsConfig: Record<string, AppConfig> = {
     name: 'RepairPe',
     tagline: 'Trusted Home Services On Demand',
     description: 'Connect with verified service providers for all your home repair and maintenance needs. From plumbing to electrical, we\'ve got you covered.',
-    icon: Wrench,
+    icon: 'Wrench',
     color: {
       primary: 'blue',
       secondary: 'blue-600',
@@ -218,7 +219,7 @@ export const appsConfig: Record<string, AppConfig> = {
     name: 'SnapPe',
     tagline: 'Professional Photography Marketplace',
     description: 'Find professional photographers for every occasion. From weddings to corporate events, connect with skilled photographers in your area.',
-    icon: Camera,
+    icon: 'Camera',
     color: {
       primary: 'pink',
       secondary: 'pink-600',
@@ -264,7 +265,7 @@ export const appsConfig: Record<string, AppConfig> = {
     name: 'RidePe',
     tagline: 'Community-Driven Mobility',
     description: 'Carpooling and mobility solutions for the modern commuter. Share rides, reduce costs, and build a sustainable transportation community.',
-    icon: Car,
+    icon: 'Car',
     color: {
       primary: 'yellow',
       secondary: 'yellow-600',
