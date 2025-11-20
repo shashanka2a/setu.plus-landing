@@ -147,16 +147,14 @@ export const Ecosystem: React.FC = () => {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[320px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          {/* Featured Large Card */}
           <SpotlightCard 
             name="ShopPe" 
             desc="Used goods marketplace connecting buyers to sellers with AI-powered recommendations and instant logistics." 
             icon={ShoppingBag} 
             color="purple" 
             appId="shoppe"
-            className="md:col-span-2 lg:col-span-2 bg-gradient-to-br from-white to-purple-50/50 dark:from-white/5 dark:to-purple-900/10"
             delay={0.1}
           />
 
@@ -196,13 +194,12 @@ export const Ecosystem: React.FC = () => {
             delay={0.5}
           />
 
-           <SpotlightCard 
+          <SpotlightCard 
             name="RidePe" 
             desc="Community-driven carpooling and mobility solutions for the modern commuter." 
             icon={Car} 
             color="yellow" 
             appId="ridepe"
-            className="md:col-span-2 lg:col-span-2 bg-gradient-to-br from-white to-yellow-50/50 dark:from-white/5 dark:to-yellow-900/10"
             delay={0.6}
           />
         </div>
